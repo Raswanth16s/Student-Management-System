@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">STUDENT PORTAL</p>
+      <h1>Student Management System</h1>
+      <p class="subtitle">Add, view, search and manage student records.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STUDENT DETAILS</p>
+          <h2 id="formTitle">Add a student</h2>
+        </div>
+      </div>
+
+      <form id="studentForm">
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <label>
+            Full name
+            <input id="name" type="text" placeholder="e.g. Arun Kumar" required>
+          </label>
+          <label>
+            Roll number
+            <input id="roll" type="text" placeholder="e.g. 23CS001" required>
+          </label>
+          <label>
+            Email
+            <input id="email" type="email" placeholder="e.g. arun@example.com">
+          </label>
+          <label>
+            Course / Department
+            <input id="course" type="text" placeholder="e.g. Computer Science" required>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="button primary" type="submit" id="saveButton">Add student</button>
+          <button class="button secondary hidden" type="button" id="cancelEdit">Cancel</button>
+        </div>
+      </form>
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-heading">
+        <div>
+          <p class="eyebrow">RECORDS</p>
+          <h2>All students <span class="count" id="studentCount">0</span></h2>
+        </div>
+        <input id="search" class="search" type="search" placeholder="Search by name, roll no. or course..." aria-label="Search students">
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll number</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable">
+            <tr><td colspan="5" class="empty">No students added yet. Add your first student above.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="storage-note">Your records are saved in this browser using local storage. They are not uploaded to a server.</p>
+    </section>
+  </main>
+
+  <footer>Beginner project • Built with HTML, CSS and JavaScript</footer>
+  <script src="script.js"></script>
+</body>
+</html>
